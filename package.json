@@ -1,0 +1,24 @@
+{
+  "name": "notes2_data",
+  "version": "0.0.1",
+  "description": "A tool to build database for notes data.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/MichaelHu/notes2_data.git"
+  },
+  "keywords": [
+    "notes",
+    "nodejs",
+    "mongodb"
+  ],
+  "author": "MichaelHu",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/MichaelHu/notes2_data/issues"
+  },
+  "homepage": "https://github.com/MichaelHu/notes2_data#readme"
+}
