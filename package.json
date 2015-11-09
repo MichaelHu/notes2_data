@@ -20,5 +20,10 @@
   "bugs": {
     "url": "https://github.com/MichaelHu/notes2_data/issues"
   },
-  "homepage": "https://github.com/MichaelHu/notes2_data#readme"
+  "homepage": "https://github.com/MichaelHu/notes2_data#readme",
+  "dependencies": {
+    "commander": "^2.9.0",
+    "mongodb": "^2.0.48",
+    "svn-spawn": "^0.1.4"
+  }
 }
