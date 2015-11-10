@@ -91,6 +91,10 @@ function insertDocuments(db, docRoot, callback) {
 
         fileId++;
 
+    });
+
+    files.forEach(function(file){
+
         svn.getLog(file, function(err, data){
             var dateStr = data && ( 
                     data[0] && data[0].date 
