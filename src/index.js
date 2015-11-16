@@ -66,7 +66,7 @@ function insertDocuments(db, docRoot, callback) {
         docRoot
         , {
             fileFilter: /.*\.md$/
-            , fileExcludes: /\/(?:bower_components|node_modules)\/)/
+            , fileExcludes: /\/(?:bower_components|node_modules)\//
             , recursive: 1
         }
     );
