@@ -75,20 +75,32 @@ function insertDocuments(db, docRoot, callback) {
     files.forEach(function(file){
         console.log(file);
         var lines = File.fileLines(file);
-        var isFirstLine = true;
+        var isTitleParsed = false;
         var date = new Date();
 
         lines.forEach(function(line){
-            if(isFirstLine) {
+
+            if(!isTitleParsed && /^#\s*([^#]+)/.test(line)){
+                isTitleParsed = true;
+
                 t_notes.insert({
                     note_id: fileId
                     , file_name: file
-                    , title: line
+                    , title: RegExp.$1
                 });
-                isFirstLine = false;
             }
+
             t_lines.insert({note_id: fileId, lineno: count++, text: line});
+
         });
+
+        if(!isTitleParsed){
+            t_notes.insert({
+                note_id: fileId
+                , file_name: file
+                , title: '未命名文档标题'
+            });
+        }
 
         fileId++;
 
