@@ -29,7 +29,7 @@ console.log('Finish inserting');
 function doInsert(docRoot) {
 
     // Connection URL
-    var url = dbURL || 'mongodb://localhost:27017/myproject';
+    var url = dbURL || 'mongodb://localhost:27017/notes2';
 
     console.log("Start connecting to server");
     // Use connect method to connect to the Server
@@ -66,6 +66,7 @@ function insertDocuments(db, docRoot, callback) {
         docRoot
         , {
             fileFilter: /.*\.md$/
+            , fileExcludes: /\/(?:bower_components|node_modules)\/)/
             , recursive: 1
         }
     );

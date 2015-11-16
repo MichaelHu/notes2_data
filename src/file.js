@@ -35,7 +35,8 @@ function getFiles(path, options) {
             }
         }
         else if(stat.isFile()) {
-            if(opt.fileFilter && !opt.fileFilter.test(_path)){
+            if(opt.fileFilter && !opt.fileFilter.test(_path)
+                || opt.fileExcludes && opt.fileExcludes.test(_path)){
                 return; 
             }
             ret.push(_path);
