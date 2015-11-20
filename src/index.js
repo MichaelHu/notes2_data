@@ -80,7 +80,8 @@ function insertDocuments(db, docRoot, callback) {
 
         lines.forEach(function(line){
 
-            if(!isTitleParsed && /^#\s*([^#]+)/.test(line)){
+            // Header which is first encountered.
+            if(!isTitleParsed && /^#+\s*([^#]+)/.test(line)){
                 isTitleParsed = true;
 
                 t_notes.insert({
